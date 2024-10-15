@@ -24,12 +24,12 @@ app.use(cors());
 //Security implement :helmet>hpp>express.json()>express.urlencoded>express-rate-limiter
 app.use(helmet());
 app.use(hpp());
-app.use(express.json('20mb'));
+app.use(express.json({limit:'20mb'}));
 app.use(express.urlencoded({extended:true}));
 
 const Limiter=rateLimit({
    windowMs:15*60*1000,
-   max:3000
+   max:3000,
 });
 app.use(Limiter)
 
@@ -38,15 +38,17 @@ app.use(bodyParser.json());
 
 
 //Database Connected after security
-ConnectedDb;
-
+const connectedDB=async()=>{
+   await ConnectedDb();
+}
+connectedDB();
 
 
 //route implement after db connected
 app.use('/api',router);
 
 // Handle undefined routes
-app.use('*',async (req,res)=>{
+app.use('*', (req,res)=>{
    res.status(404).json({data:"Not Found"})
 });
 

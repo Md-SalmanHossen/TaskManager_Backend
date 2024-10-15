@@ -14,4 +14,4 @@ const ConnectedDb=async()=>{
         process.exit(1);
     }
 }
-module.export=ConnectedDb;
+module.exports=ConnectedDb;
