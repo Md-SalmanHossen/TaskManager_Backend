@@ -18,7 +18,7 @@ const SendEmailUtility=async(EmailTo,EmailText,EmailSubject)=>{
    });
 
    let mailOption={
-      form:process.env.EMAIL_FROM,,
+      form:process.env.EMAIL_FROM,
       to:EmailTo,
       subject:EmailSubject,
       text:EmailText

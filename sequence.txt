@@ -10,3 +10,7 @@
       OTP Model Creation🔥
       
       Email Utility👌
+
+      User Controller: 
+            ✅
+
