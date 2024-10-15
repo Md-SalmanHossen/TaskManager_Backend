@@ -2,6 +2,9 @@
 const mongoose=require('mongoose');
 const dotenv =require('dotenv');
 
+//Load environment variables
+dotenv.config();
+
 const ConnectedDb=async()=>{
     try{
         await mongoose.connect(process.env.MONGO_URI);

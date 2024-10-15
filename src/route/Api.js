@@ -1,9 +1,7 @@
 
 const express=require('express');
-
-
 const router=express.Router();
 
 
 
-module.exports=Api;
+module.exports=router;

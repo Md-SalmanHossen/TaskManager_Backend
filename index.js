@@ -1,10 +1,10 @@
 
-const ConnectedDB=require('./src/config/db');
+const dotenv=require('dotenv');
+dotenv.config();
+
+
 const app=require('./app');
 const {PORT}=require('./src/config/config');
-
-//Connected to MongoDb
-ConnectedDB();
 
 
 //Start Server
