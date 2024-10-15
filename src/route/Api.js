@@ -1,6 +1,24 @@
 
+//own file import
+const UserController=require('../controller/UserController.js');
+
+
+//package import
 const express=require('express');
 const router=express.Router();
+
+
+//api implement
+
+router.post('/registration',UserController.registration);
+router.post('/login',UserController.login);
+router.post('/profileUpdate',UserController.profileUpdate);
+
+router.get('/RecoverVerifyEmails/:email',UserController.verifyEmail);
+router.get('/RecoverVerifyOTP:email/:otp',UserController.verifyOTP);
+router.get('/RecoverPassword/:otp/:password',UserController.passwordReset);
+
+
 
 
 
