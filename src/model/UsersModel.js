@@ -18,9 +18,9 @@ const DataBaseSchema=mongoose.Schema({
       type:String,
       required:true
    }
-},{versionKey:false});
+},{timestamps:true,versionKey:false});
 
-
+//first one is collection name and 2nd one is schema model name
 const UserModel=mongoose.model('users',DataBaseSchema);
 
 module.exports=UserModel;

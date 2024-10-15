@@ -4,4 +4,9 @@
       Package Installation👌
       app.js Configuration👍
       Running Server🔥
+
       User Model Creation✅
+      Task Model Creation✅
+      OTP Model Creation🔥
+      
+      Email Utility👌
