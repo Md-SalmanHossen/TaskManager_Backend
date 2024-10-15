@@ -1,5 +1,6 @@
 node_modules
+.env
 
-username :salman
-passowrd cluster= TaskManagerBackend1
-mongodb+srv://<db_username>:<db_password>@cluster0.edzoh.mongodb.net/
+# username :salman
+# passowrd cluster= TaskManagerBackend1
+# mongodb+srv://<db_username>:<db_password>@cluster0.edzoh.mongodb.net/
