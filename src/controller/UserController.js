@@ -44,7 +44,20 @@ exports.profileUpdate=async(req,res)=>{
 }
 
 exports.profileDetails=async(req,res)=>{
+   try {
 
+      let email=req.header['email'];
+
+      let result=await UsersModel.find({email:email})
+
+      let reqBody=req.body;
+      await UsersModel.create(reqBody);
+      res.json({status:"success",data:result});
+
+   } catch (error) {
+      res.json({status:"fail",message:error});
+
+   }
 }
 
 exports.verifyEmail=async(req,res)=>{

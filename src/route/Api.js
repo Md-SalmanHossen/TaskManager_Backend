@@ -1,7 +1,7 @@
 
 //own file import
 const UserController=require('../controller/UserController.js');
-
+const AuthVerifyMiddleware=require('../middleware/AuthMiddleware.js')
 
 //package import
 const express=require('express');
@@ -12,6 +12,9 @@ const router=express.Router();
 
 router.post('/registration',UserController.registration);
 router.post('/login',UserController.login);
+
+//after login 
+router.get('/profileDetails',AuthVerifyMiddleware,UserController.profileDetails);
 router.post('/profileUpdate',UserController.profileUpdate);
 
 router.get('/RecoverVerifyEmails/:email',UserController.verifyEmail);
