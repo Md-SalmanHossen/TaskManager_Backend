@@ -46,16 +46,19 @@ exports.profileUpdate=async(req,res)=>{
 exports.profileDetails=async(req,res)=>{
    try {
 
-      let email=req.header['email'];
+      let email=req.email;
 
       let result=await UsersModel.find({email:email})
 
-      let reqBody=req.body;
-      await UsersModel.create(reqBody);
+      // Check if the user was found
+      if (!result) {
+         return res.status(404).json({ status: "fail", message: "User not found" });
+      }
+
       res.json({status:"success",data:result});
 
    } catch (error) {
-      res.json({status:"fail",message:error});
+      res.status(500).json({status:"fail",message:error.message});
 
    }
 }
