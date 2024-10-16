@@ -12,5 +12,15 @@
       Email Utility👌
 
       User Controller: 
-            ✅
+            ✅registration
+            ✅login
+            ✅profile update
+            ✅verify emails
+            ✅verify OTP
+            ✅password reset
+            ✅logout
+      
+      ✅login :
+             create jwt👌
+             login function
 
