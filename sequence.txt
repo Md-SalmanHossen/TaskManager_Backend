@@ -24,3 +24,6 @@
              create jwt👌
              login function
 
+      ✅profile details
+      ✅profile update
+

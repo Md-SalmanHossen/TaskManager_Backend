@@ -39,9 +39,25 @@ exports.login=async(req,res)=>{
    }
 }
 
-exports.profileUpdate=async(req,res)=>{
+exports.profileUpdate = async (req, res) => {
+   try {
+       let email = req.email;
+       // console.log("Email from token:", email); // Debugging step
+       
+       let reqBody = req.body;
+       let result = await UsersModel.updateOne({ email: email }, reqBody);
 
-}
+       if (result.modifiedCount > 0) {
+           res.json({ status: "success", message: "Update Completed" });
+       } else {
+           res.status(400).json({ status: "fail", message: "User not found" });
+       }
+   } catch (error) {
+       res.status(500).json({ status: "fail", message: error.message });
+   }
+};
+
+
 
 exports.profileDetails=async(req,res)=>{
    try {
